@@ -99,7 +99,10 @@ function parseTitle(raw) {
 }
 
 function normalizeKey(s) {
-    return String(s).replace(/['']/g, "'").replace(/[""]/g, '"').toLowerCase();
+    return String(s)
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201C\u201D]/g, '"')
+        .toLowerCase();
 }
 
 function lookupShow(songName) {
