@@ -5,6 +5,7 @@ import Link from 'next/link';
 // ─── Constants ─────────────────────────────────────────────────────────────────
 const API_URL = 'https://broadwaybound.org/wp-json/wp/v2/contestants?contest_category=101&per_page=100';
 const VOTE_URL = 'https://broadwaybound.org/karaoke-contest-2026-voting/';
+const ENTRY_URL = 'https://broadwaybound.org/contestants/entry-5-when-i-grow-up-lucinda-sage-paige/';
 const CONTEST_END_UTC = new Date('2026-04-13T05:00:00.000Z'); // April 12 10 PM PT
 const PERFORMANCE_CUTOFF = 6;
 const POLL_MS = 30_000;
@@ -194,6 +195,7 @@ export default function KaraokeContest2026() {
 
     const sortedByVotes = [...entries].sort((a, b) => b.votes - a.votes);
     const cutoffVotes = sortedByVotes[PERFORMANCE_CUTOFF - 1]?.votes ?? 0;
+    const firstPlaceVotes = sortedByVotes[0]?.votes ?? 0;
 
     const sorted = [...entries].sort((a, b) => (sortBy === 'votes' ? b.votes - a.votes : b.views - a.views));
 
@@ -225,7 +227,7 @@ export default function KaraokeContest2026() {
                         <span className="text-sm font-bold text-purple-700">🎤 Karaoke 2026</span>
                     </nav>
                     <a
-                        href={VOTE_URL}
+                        href={ENTRY_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
@@ -332,6 +334,9 @@ export default function KaraokeContest2026() {
                                         <th className={`text-right px-3 py-3 font-semibold w-24 text-orange-500 ${sortBy === 'views' ? 'hidden' : ''}`}>
                                             To Perform
                                         </th>
+                                        <th className={`text-right px-3 py-3 font-semibold w-24 text-blue-500 ${sortBy === 'views' ? 'hidden' : ''}`}>
+                                            To First
+                                        </th>
                                         <th className="px-3 py-3 w-16"></th>
                                     </tr>
                                 </thead>
@@ -434,6 +439,19 @@ export default function KaraokeContest2026() {
                                                         )}
                                                     </td>
 
+                                                    {/* To First */}
+                                                    <td className={`px-3 py-3 text-right font-mono tabular-nums ${sortBy === 'views' ? 'hidden' : ''}`}>
+                                                        {rank === 1 ? (
+                                                            <span className="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2 py-0.5 rounded-full">
+                                                                🥇 1st
+                                                            </span>
+                                                        ) : (
+                                                            <span className="font-semibold text-blue-600">
+                                                                +{(firstPlaceVotes - entry.votes + 1).toLocaleString()}
+                                                            </span>
+                                                        )}
+                                                    </td>
+
                                                     {/* View link */}
                                                     <td className="px-3 py-3 text-center">
                                                         <a
@@ -454,7 +472,7 @@ export default function KaraokeContest2026() {
                                                 {/* ── Performance cutoff divider (votes sort only) ── */}
                                                 {isLastPerformer && sortBy === 'votes' && (
                                                     <tr key="cutoff-divider">
-                                                        <td colSpan={7} className="px-4 py-2.5 bg-purple-50">
+                                                        <td colSpan={8} className="px-4 py-2.5 bg-purple-50">
                                                             <div className="flex items-center gap-3 text-xs font-bold text-purple-600 uppercase tracking-wider">
                                                                 <div className="flex-1 border-t-2 border-dashed border-purple-300" />
                                                                 ✂ Top 6 perform on stage — entries below need more votes!
