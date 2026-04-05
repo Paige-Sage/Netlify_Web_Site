@@ -264,6 +264,14 @@ export default function KaraokeContest2026() {
                                     <div className="text-sm font-medium text-gray-700">{entries.length}</div>
                                 </div>
                             )}
+                            {entries.length > 0 && (
+                                <div>
+                                    <div className="text-xs text-gray-400 uppercase tracking-wide mb-1">Total Raised</div>
+                                    <div className="text-sm font-medium text-green-700">
+                                        ${entries.reduce((sum, e) => sum + (e.votes || 0), 0).toLocaleString()}
+                                    </div>
+                                </div>
+                            )}
                         </div>
 
                         <div className="flex items-center gap-3">
