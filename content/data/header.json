@@ -30,6 +30,15 @@
             "type": "Link"
         },
         {
+            "label": "About",
+            "altText": "About",
+            "url": "/about",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
             "label": "🎤 Karaoke Contest",
             "altText": "BBSK 2026 Leaderboard",
             "url": "/karaoke-contest-2026",
