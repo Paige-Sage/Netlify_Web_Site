@@ -43,8 +43,10 @@ sections:
           - pb-16
           - pr-16
 seo:
-  metaTitle: Sage & Paige's Website - Home of Fitz the Cat
-  metaDescription: A website for sharing cute pictures of our pets and other fun stuff.
+  metaTitle: Sage Waliczek & Paige Greenberg's Website
+  metaDescription: >-
+    The website of Sage Waliczek and Paige Greenberg — two middle schoolers
+    sharing cute photos of their cats and other fun stuff.
   socialImage: /images/Fitz1.jpg
   type: Seo
 type: PageLayout

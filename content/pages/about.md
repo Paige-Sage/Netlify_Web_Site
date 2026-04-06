@@ -9,10 +9,10 @@ sections:
       type: TitleBlock
     subtitle: Two middle schoolers sharing their adventures with animals
     text: >
-      Welcome to our corner of the internet! We're two friends who decided to
-      create this site to share pictures and stories about our pets. What 
-      started as a simple idea turned into a fun project where we can share our
-      love for our furry friends.
+      Welcome to our corner of the internet! We're Sage and Paige — two friends 
+      who decided to create this site to share pictures and stories about our pets.
+      What started as a simple idea turned into a fun project where we can share
+      our love for our furry friends.
 
       We're both in 7th grade at Northwest School and share a passion for music
       and theatre. When we're not posting about cats, you can find us practicing
@@ -57,15 +57,18 @@ sections:
       subtitle:
         textAlign: center
 seo:
-  metaTitle: About Us - Paige & Sage
+  metaTitle: About Sage Waliczek & Paige Greenberg
   metaDescription: >-
-    Learn about Sage and Paige, two middle school friends sharing their
-    adventures with cats and other furry friends.
+    Meet Sage Waliczek and Paige Greenberg, two 7th graders from Northwest
+    School sharing their adventures with cats and other fun stuff.
   socialImage: /images/Fitz1.jpg
   metaTags:
     - type: MetaTag
       property: 'author'
       content: 'Sage Waliczek'
+    - type: MetaTag
+      property: 'author'
+      content: 'Paige Greenberg'
   type: Seo
 type: PageLayout
 ---

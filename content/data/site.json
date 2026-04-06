@@ -1,7 +1,7 @@
 {
     "favicon": "/images/favicon.svg",
     "footer": "content/data/footer.json",
-    "titleSuffix": "Our Cute Animals",
+    "titleSuffix": "Sage Waliczek & Paige Greenberg",
     "defaultSocialImage": "/images/main-hero.jpg",
     "type": "Config",
     "header": "content/data/header.json"
