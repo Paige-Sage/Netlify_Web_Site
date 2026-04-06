@@ -242,7 +242,7 @@ export default function KaraokeContest2026() {
                     {/* ── Page title ── */}
                     <div className="mb-6">
                         <h1 className="text-3xl font-bold text-gray-900 mb-1">🎭 Karaoke Contest 2026 Leaderboard</h1>
-                        <p className="text-gray-500 text-sm">Broadway Bound Sings · Spring 2026 · Top 6 performers earn a spot on stage</p>
+                        <p className="text-gray-500 text-sm">Broadway Bound Sings Karaoke · Spring 2026 · Top 6 performers earn a spot on stage</p>
                     </div>
 
                     {/* ── Status bar ── */}
