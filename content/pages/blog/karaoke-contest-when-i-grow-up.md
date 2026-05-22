@@ -11,7 +11,7 @@ featuredImage:
   styles:
     self:
       borderRadius: medium
-isFeatured: true
+isFeatured: false
 seo:
   metaTitle: 'Karaoke Contest 2026: When I Grow Up'
   metaDescription: >-
@@ -40,14 +40,13 @@ With the arrangement done, the three of them rehearsed and then filmed their ent
 
 Here's the video they submitted to the contest:
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0;">
+<div class="sb-video-embed">
   <iframe
     src="https://www.youtube.com/embed/n6sUMQZMiRM"
     title="When I Grow Up — Sage, Paige & Lucinda (Karaoke Contest 2026 entry)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
   ></iframe>
 </div>
 
@@ -61,14 +60,13 @@ There was just one catch: Lucinda wasn't available for the live performance. Tha
 
 Here's the live performance from the showcase:
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0;">
+<div class="sb-video-embed">
   <iframe
     src="https://www.youtube.com/embed/rbfRY_30KPc"
     title="When I Grow Up — Sage & Paige (Broadway Bound Sings Karaoke live showcase)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
   ></iframe>
 </div>
 
