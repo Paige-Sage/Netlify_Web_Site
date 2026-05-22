@@ -5,7 +5,7 @@ date: '2026-04-25'
 excerpt: >-
   How Sage, Paige, and Lucinda planned and filmed their winning video of "When I Grow Up" from Matilda for the Broadway Bound Sings Karaoke contest — including writing their own harmonies — and then performed it live at the showcase.
 featuredImage:
-  url: /images/Matilda.png
+  url: /images/Matilda.jpg
   altText: When I Grow Up from Matilda the Musical
   type: ImageBlock
   styles:
@@ -16,7 +16,7 @@ seo:
   metaTitle: 'Karaoke Contest 2026: When I Grow Up'
   metaDescription: >-
     Sage, Paige, and Lucinda's journey through the Broadway Bound Sings Karaoke 2026 contest — from filming their winning video of "When I Grow Up" to performing it live at the showcase.
-  socialImage: /images/Matilda.png
+  socialImage: /images/Matilda.jpg
   type: Seo
 colors: bg-light-fg-dark
 styles:
