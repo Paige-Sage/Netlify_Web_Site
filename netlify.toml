@@ -1,3 +1,17 @@
 [build]
   command = "npm run build"
   publish = ".next"
+
+# The 2026 karaoke contest page is no longer functional (upstream API removed).
+# Redirect the previously-indexed URL to the blog recap so search traffic still lands somewhere useful.
+[[redirects]]
+  from = "/karaoke-contest-2026"
+  to = "/blog/karaoke-contest-when-i-grow-up/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/karaoke-contest-2026/*"
+  to = "/blog/karaoke-contest-when-i-grow-up/"
+  status = 301
+  force = true
