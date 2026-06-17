@@ -4,6 +4,9 @@ import Link from 'next/link';
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 // Public, PII-free casting feed served by the castingnotify read-api (Azure Function).
+// The feed is the dashboard MODEL shape: { generated_at, last_run, new_count, counts,
+// bucket_order, bucket_label, health, groups:{ bucket: [card, ...] } }. Cards are already
+// grouped server-side and pared down (public fields only, score tag dropped, URLs verbatim).
 const API_URL = 'https://func-cn-readapi-f9edd8.azurewebsites.net/api/feed';
 
 // Fixed, allowlisted buckets — sections/classes are NEVER derived from arbitrary feed values.
@@ -12,17 +15,22 @@ const SECTIONS = [
     { bucket: 'union_caution', label: 'Union — worth a look (Taft-Hartley)', accent: 'border-purple-500', dot: 'bg-purple-500' },
     { bucket: 'possible', label: 'Possible', accent: 'border-amber-500', dot: 'bg-amber-500' }
 ];
-const KNOWN_BUCKETS = new Set(SECTIONS.map((s) => s.bucket));
-const DIST_LABEL = {
-    '<=10mi': 'within 10 mi',
-    '<=25mi': 'within 25 mi',
-    '<=60mi': 'within 60 mi',
-    remote: 'remote'
+
+// Map the server-computed tag CSS class to a Tailwind pill. The feed owns tag content (the
+// internal "score" tag is already removed server-side); we render text verbatim and only style.
+const TAG_CLASS = {
+    tag: 'bg-gray-100 text-gray-600',
+    'tag new': 'bg-green-600 text-white',
+    'tag dist': 'bg-blue-50 text-blue-700',
+    'tag union': 'bg-purple-100 text-purple-700',
+    'tag review': 'bg-yellow-100 text-yellow-800',
+    'tag llm-adult': 'bg-red-100 text-red-700',
+    'tag llm-youth': 'bg-green-100 text-green-700'
 };
 
 // ─── Utility helpers ──────────────────────────────────────────────────────────
-// Only allow absolute http/https URLs with no embedded credentials (defense-in-depth;
-// the server already strips query/fragment and host-allowlists, but the SPA validates too).
+// Only allow absolute http/https URLs with no embedded credentials (defense-in-depth; the
+// server already host/scheme-validates, but the SPA re-validates everything it renders).
 function safeUrl(raw) {
     if (!raw || typeof raw !== 'string') return null;
     try {
@@ -48,50 +56,102 @@ function timeAgo(iso) {
     return `${d} ${d === 1 ? 'day' : 'days'} ago`;
 }
 
-function Card({ entry }) {
-    const u = safeUrl(entry.url);
+function Card({ card }) {
+    const tags = Array.isArray(card.tags) ? card.tags.filter((t) => t && t.text) : [];
+
+    // Roles: prefer the LLM's youth-role reading; fall back to the parsed roles (filtering out the
+    // internal "(listing)" placeholder sentinel). Hide the whole box when neither has content.
+    const youthRoles = Array.isArray(card.llm_youth_roles)
+        ? card.llm_youth_roles.filter((r) => r && r.name)
+        : [];
+    const parsedRoles = Array.isArray(card.roles)
+        ? card.roles.filter((r) => r && r !== '(listing)')
+        : [];
+    const useYouth = youthRoles.length > 0;
+    const showRoles = useYouth || parsedRoles.length > 0;
+
+    // Links: validate + dedupe each URL client-side; render one anchor per distinct listing.
+    const seen = new Set();
+    const links = [];
+    (Array.isArray(card.urls) ? card.urls : []).forEach((raw) => {
+        const u = safeUrl(raw);
+        if (u && !seen.has(u.href)) {
+            seen.add(u.href);
+            links.push(u);
+        }
+    });
+    const sources = Array.isArray(card.source_labels) ? card.source_labels.filter(Boolean) : [];
+
     return (
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
             <h3 className="text-base font-semibold text-gray-900">
-                {entry.title || 'Untitled'}
-                {entry.org ? <span className="font-normal text-gray-500"> · {entry.org}</span> : null}
+                {card.title || 'Untitled'}
+                {card.org ? <span className="font-normal text-gray-500"> · {card.org}</span> : null}
             </h3>
-            <div className="flex flex-wrap gap-1.5 mt-2">
-                {entry.is_new ? (
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded bg-green-600 text-white">NEW</span>
-                ) : null}
-                {entry.type ? (
-                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">
-                        {String(entry.type).replace(/_/g, ' ')}
-                    </span>
-                ) : null}
-                {entry.locality && entry.locality !== 'unknown' ? (
-                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">{entry.locality}</span>
-                ) : null}
-                {entry.distance_band ? (
-                    <span className="text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700">
-                        📍 {DIST_LABEL[entry.distance_band] || entry.distance_band}
-                    </span>
-                ) : null}
-                {entry.deadline ? (
-                    <span className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600">due {entry.deadline}</span>
-                ) : null}
-            </div>
-            {Array.isArray(entry.reasons) && entry.reasons.length ? (
-                <div className="text-sm text-gray-500 mt-2">{entry.reasons.join(' · ')}</div>
+
+            {tags.length ? (
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                    {tags.map((t, i) => (
+                        <span
+                            key={i}
+                            className={`text-xs px-2 py-0.5 rounded ${TAG_CLASS[t.cls] || TAG_CLASS.tag}`}
+                        >
+                            {t.text}
+                        </span>
+                    ))}
+                </div>
             ) : null}
-            {u ? (
-                <div className="mt-2 text-sm">
-                    <a
-                        href={u.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        referrerPolicy="no-referrer"
-                        className="text-purple-600 hover:underline font-medium"
-                    >
-                        open listing ↗
-                    </a>
-                    <span className="text-xs text-gray-400 ml-2">{u.hostname}</span>
+
+            {card.llm_summary ? <div className="text-sm text-gray-600 mt-2">{card.llm_summary}</div> : null}
+
+            {card.eligibility_note ? (
+                <div className="text-sm text-gray-500 mt-2">{card.eligibility_note}</div>
+            ) : null}
+            {card.future_round_note ? (
+                <div className="mt-2">
+                    <span className="inline-block rounded bg-purple-100 px-2 py-1 text-sm font-semibold text-purple-700">
+                        📣 {card.future_round_note}
+                    </span>
+                </div>
+            ) : null}
+
+            {showRoles ? (
+                <div className="mt-2 rounded-md border border-gray-200 bg-gray-50 px-3 py-2">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-gray-700">Roles</div>
+                    <ul className="list-disc pl-5 text-sm text-gray-700 mt-1">
+                        {useYouth
+                            ? youthRoles.map((r, i) => (
+                                  <li key={i}>
+                                      {r.name}
+                                      {r.quote ? (
+                                          <span className="italic text-gray-500"> — “{r.quote}”</span>
+                                      ) : null}
+                                  </li>
+                              ))
+                            : parsedRoles.map((r, i) => <li key={i}>{r}</li>)}
+                    </ul>
+                </div>
+            ) : null}
+
+            {card.description ? <div className="text-sm text-gray-600 mt-2">{card.description}</div> : null}
+
+            {links.length || sources.length ? (
+                <div className="mt-2 text-sm flex flex-wrap items-center gap-x-3 gap-y-1">
+                    {links.map((u, i) => (
+                        <a
+                            key={i}
+                            href={u.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            referrerPolicy="no-referrer"
+                            className="text-purple-600 hover:underline font-medium"
+                        >
+                            open original ↗ <span className="text-xs text-gray-400 font-normal">{u.hostname}</span>
+                        </a>
+                    ))}
+                    {sources.length ? (
+                        <span className="text-xs text-gray-400">via {sources.join(', ')}</span>
+                    ) : null}
                 </div>
             ) : null}
         </div>
@@ -132,14 +192,20 @@ export default function Casting() {
         fetchData();
     }, [fetchData]);
 
-    // Defensive grouping: drop any entry whose bucket isn't one of the three known buckets.
-    const entries = feed && Array.isArray(feed.entries) ? feed.entries : [];
-    const byBucket = { strong: [], union_caution: [], possible: [] };
-    entries.forEach((e) => {
-        if (e && KNOWN_BUCKETS.has(e.bucket)) byBucket[e.bucket].push(e);
+    // Read the server-grouped model defensively: only the 3 known buckets, each a list of cards.
+    const groups =
+        feed && feed.groups && typeof feed.groups === 'object' && !Array.isArray(feed.groups)
+            ? feed.groups
+            : {};
+    const byBucket = {};
+    SECTIONS.forEach((s) => {
+        byBucket[s.bucket] = Array.isArray(groups[s.bucket]) ? groups[s.bucket].filter(Boolean) : [];
     });
     const updated = feed ? timeAgo(feed.generated_at) : '';
-    const shownCount = byBucket.strong.length + byBucket.union_caution.length + byBucket.possible.length;
+    const shownCount = SECTIONS.reduce((n, s) => n + byBucket[s.bucket].length, 0);
+
+    const cardKey = (card, i) =>
+        `${card.bucket || ''}|${card.title || ''}|${card.first_seen || ''}|${(Array.isArray(card.urls) && card.urls[0]) || i}`;
 
     return (
         <>
@@ -215,8 +281,8 @@ export default function Casting() {
                                       <p className="text-sm text-gray-400 italic">None right now.</p>
                                   ) : (
                                       <div className="grid gap-3">
-                                          {byBucket[s.bucket].map((e) => (
-                                              <Card key={e.id} entry={e} />
+                                          {byBucket[s.bucket].map((c, i) => (
+                                              <Card key={cardKey(c, i)} card={c} />
                                           ))}
                                       </div>
                                   )}
