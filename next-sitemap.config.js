@@ -2,5 +2,5 @@
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://paigeandsage.club',
   generateRobotsTxt: true,
-  exclude: ['/pricing', '/careers', '/casting', '/casting/*'],
+  exclude: ['/pricing', '/careers', '/casting', '/casting/*', '/privacy', '/terms'],
 }
