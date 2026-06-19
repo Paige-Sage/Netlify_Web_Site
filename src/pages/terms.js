@@ -41,13 +41,13 @@ export default function Terms() {
 
                     <Section title="Text-message (SMS) program">
                         <p>
-                            This is a private, invitation-only, low-volume program for a small number
-                            of pre-approved family members. Invited recipients opt in by texting
-                            <strong> JOIN</strong> to <strong>(206) 339-4171</strong> and receive a
-                            one-time confirmation message. Only pre-approved numbers are eligible to
-                            enroll. By opting in, you consent to receive recurring text notifications
+                            This is a private, low-volume program for family and household members.
+                            Recipients opt in by texting <strong>JOIN</strong> to
+                            <strong> (206) 339-4171</strong> and receive a one-time confirmation
+                            message. By opting in, you consent to receive recurring text notifications
                             about casting opportunities (a short alert plus a link to the public casting
-                            page). Message frequency varies, typically up to about two messages per day.
+                            page). We send these alerts only to a small number of family and household
+                            members. Message frequency varies, typically up to about two messages per day.
                         </p>
                         <p>
                             <strong>Message and data rates may apply.</strong> Your mobile carrier is

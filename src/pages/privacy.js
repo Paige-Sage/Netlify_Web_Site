@@ -42,12 +42,13 @@ export default function Privacy() {
                     <Section title="Information we collect">
                         <p>
                             For our text-message (SMS) notifications we store only the mobile phone
-                            numbers of family members who have given us permission to text them. This
-                            is a private, invitation-only program: invited family members opt in by
-                            texting the keyword <strong>JOIN</strong> to our program number and receive
-                            a one-time confirmation reply. Numbers that have not been invited are not
-                            enrolled. We do not collect names, location, or any sensitive personal data
-                            through the messaging program.
+                            numbers of recipients who have opted in to receive texts. Recipients opt in
+                            by texting the keyword <strong>JOIN</strong> to our program number and
+                            receive a one-time confirmation reply. This is a private, low-volume,
+                            family-oriented program: we send casting alerts only to a small number of
+                            family and household members and do not operate a public marketing service.
+                            We do not collect names, location, or any sensitive personal data through
+                            the messaging program.
                         </p>
                         <p>
                             The public casting page itself displays no personal information and does
@@ -57,19 +58,20 @@ export default function Privacy() {
 
                     <Section title="How we use information">
                         <p>
-                            Mobile numbers are used solely to send casting-opportunity notifications
-                            (a short alert plus a link to the public casting page). We do not use them
-                            for advertising or any unrelated purpose.
+                            Mobile numbers are used solely to send the requested casting-opportunity
+                            notifications (a short alert plus a link to the public casting page), to
+                            process HELP and STOP requests, to maintain consent records, and to operate
+                            the SMS program. We do not use them for advertising or any unrelated purpose.
                         </p>
                     </Section>
 
                     <Section title="SMS messaging &amp; consent (text messaging)">
                         <p>
-                            This is a private, invitation-only messaging program for a small number of
-                            pre-approved family members. Invited recipients consent by texting
-                            <strong> JOIN</strong> to <strong>(206) 339-4171</strong>, after which they
-                            receive a confirmation message. Only pre-approved numbers are eligible to
-                            enroll; we do not message the general public.
+                            This is a private, low-volume messaging program for family and household
+                            members. Recipients consent by texting <strong>JOIN</strong> to
+                            <strong> (206) 339-4171</strong>, after which they receive a confirmation
+                            message. We send casting alerts only to a small number of family and
+                            household members and do not operate a public marketing program.
                         </p>
                         <p className="font-medium text-gray-900">
                             No mobile information will be shared with third parties or affiliates for
