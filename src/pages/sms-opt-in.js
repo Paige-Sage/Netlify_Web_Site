@@ -36,25 +36,22 @@ export default function SmsOptIn() {
                             To opt in, text <span className="text-purple-700">JOIN</span> to {SMS_NUMBER_DISPLAY}
                         </p>
                         <p className="text-sm text-gray-700">
-                            You&apos;ll receive a one-time confirmation reply. Reply <strong>HELP</strong> for
-                            help or <strong>STOP</strong> to cancel at any time.
+                            You&apos;ll receive a one-time confirmation reply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to cancel at any
+                            time.
                         </p>
                     </div>
 
-                    <Section title="What you&apos;ll receive">
+                    <Section title="What you'll receive">
                         <p>
-                            PaigeAndSage sends short text alerts about youth performing-arts casting
-                            opportunities, aggregated from public sources. Each message is a brief alert
-                            plus a link to our public casting page.
+                            PaigeAndSage sends short text alerts about youth performing-arts casting opportunities, aggregated from public sources. Each message
+                            is a brief alert plus a link to our public casting page.
                         </p>
                     </Section>
 
                     <Section title="Who this is for">
                         <p>
-                            This is a private, non-commercial, low-volume program. Anyone may opt in by
-                            texting JOIN, but regular casting alerts are only sent to a small number of
-                            pre-approved family and household members. It is not a public marketing or
-                            lead-generation service.
+                            This is a private, non-commercial, low-volume program. Anyone may opt in by texting JOIN, but regular casting alerts are only sent
+                            to a small number of pre-approved and opted-infamily and household members. It is not a public marketing or lead-generation service.
                         </p>
                     </Section>
 
@@ -68,29 +65,42 @@ export default function SmsOptIn() {
                     <Section title="Help &amp; opt-out">
                         <p>
                             Reply <strong>HELP</strong> (or email{' '}
-                            <a className="text-purple-600 hover:underline" href={`mailto:${CONTACT}`}>{CONTACT}</a>)
-                            for help. Reply <strong>STOP</strong> to unsubscribe at any time; after you
-                            reply STOP we send one confirmation message and then stop texting. Reply
+                            <a className="text-purple-600 hover:underline" href={`mailto:${CONTACT}`}>
+                                {CONTACT}
+                            </a>
+                            ) for help. Reply <strong>STOP</strong> to unsubscribe at any time; after you reply STOP we send one confirmation message and then
+                            stop texting. Reply
                             <strong> JOIN</strong> to resubscribe.
                         </p>
                     </Section>
 
                     <Section title="Your privacy">
                         <p>
-                            Mobile opt-in data and SMS consent are never shared or sold to third parties
-                            or affiliates for marketing or promotional purposes. See our{' '}
-                            <Link className="text-purple-600 hover:underline" href="/privacy">Privacy Policy</Link>{' '}
+                            Mobile opt-in data and SMS consent are never shared or sold to third parties or affiliates for marketing or promotional purposes.
+                            See our{' '}
+                            <Link className="text-purple-600 hover:underline" href="/privacy">
+                                Privacy Policy
+                            </Link>{' '}
                             and{' '}
-                            <Link className="text-purple-600 hover:underline" href="/terms">Terms &amp; Conditions</Link>.
+                            <Link className="text-purple-600 hover:underline" href="/terms">
+                                Terms &amp; Conditions
+                            </Link>
+                            .
                         </p>
                     </Section>
 
                     <footer className="text-xs text-gray-400 mt-10">
-                        <Link className="text-purple-600 hover:underline" href="/privacy">Privacy Policy</Link>
+                        <Link className="text-purple-600 hover:underline" href="/privacy">
+                            Privacy Policy
+                        </Link>
                         {' · '}
-                        <Link className="text-purple-600 hover:underline" href="/terms">Terms &amp; Conditions</Link>
+                        <Link className="text-purple-600 hover:underline" href="/terms">
+                            Terms &amp; Conditions
+                        </Link>
                         {' · '}
-                        <Link className="text-purple-600 hover:underline" href="/casting">Casting opportunities</Link>
+                        <Link className="text-purple-600 hover:underline" href="/casting">
+                            Casting opportunities
+                        </Link>
                     </footer>
                 </div>
             </main>
