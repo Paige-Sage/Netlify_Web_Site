@@ -23,12 +23,12 @@ export default function SmsOptIn() {
     return (
         <>
             <Head>
-                <title>SMS Alerts Opt-In · PaigeAndSage</title>
+                <title>SMS Alerts Opt-In · Casting Opportunities</title>
                 <meta name="robots" content="noindex" />
             </Head>
             <main className="bg-gray-50 min-h-screen">
                 <div className="max-w-3xl mx-auto px-4 py-10">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-1">PaigeAndSage SMS Alerts</h1>
+                    <h1 className="text-3xl font-bold text-gray-900 mb-1">Casting Opportunities SMS Alerts</h1>
                     <p className="text-gray-500 text-sm mb-8">Text-message opt-in information</p>
 
                     <div className="rounded-lg border border-purple-200 bg-purple-50 p-5 mb-8">
@@ -43,21 +43,21 @@ export default function SmsOptIn() {
 
                     <Section title="What you'll receive">
                         <p>
-                            PaigeAndSage sends short text alerts about youth performing-arts casting opportunities, aggregated from public sources. Each message
-                            is a brief alert plus a link to our public casting page.
+                            This program sends short text alerts about youth performing-arts casting opportunities, aggregated from public sources. Each message
+                            is a brief alert plus a link to the casting listing.
                         </p>
                     </Section>
 
                     <Section title="Who this is for">
                         <p>
-                            This is a private, non-commercial, low-volume program. Anyone may opt in by texting JOIN, but regular casting alerts are only sent
-                            to a small number of pre-approved and opted-infamily and household members. It is not a public marketing or lead-generation service.
+                            Text JOIN to opt in and receive casting alerts. This is a low-volume, non-commercial notification program for subscribers who opt
+                            in; it is not a public marketing or lead-generation service.
                         </p>
                     </Section>
 
                     <Section title="Message frequency &amp; rates">
                         <p>
-                            Message frequency varies, typically up to about two messages per day.
+                            Message frequency varies, typically two messages per day or less.
                             <strong> Message and data rates may apply.</strong>
                         </p>
                     </Section>
@@ -96,10 +96,6 @@ export default function SmsOptIn() {
                         {' · '}
                         <Link className="text-purple-600 hover:underline" href="/terms">
                             Terms &amp; Conditions
-                        </Link>
-                        {' · '}
-                        <Link className="text-purple-600 hover:underline" href="/casting">
-                            Casting opportunities
                         </Link>
                     </footer>
                 </div>

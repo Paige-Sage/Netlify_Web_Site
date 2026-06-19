@@ -22,7 +22,7 @@ export default function Terms() {
     return (
         <>
             <Head>
-                <title>Terms &amp; Conditions · PaigeAndSage</title>
+                <title>Terms &amp; Conditions · Casting Opportunities</title>
                 <meta name="robots" content="noindex" />
             </Head>
             <main className="bg-gray-50 min-h-screen">
@@ -32,61 +32,56 @@ export default function Terms() {
 
                     <Section title="About this service">
                         <p>
-                            PaigeAndSage is a small, private family project that aggregates publicly
-                            posted youth performing-arts casting opportunities and shares them with a
-                            few consenting family members. It is provided as-is, for personal use, with
-                            no warranty. Always confirm details on the original listing.
+                            This is a small, non-commercial program that aggregates publicly posted youth performing-arts casting opportunities and shares them
+                            with subscribers who opt in. It is provided as-is, for personal use, with no warranty. Always confirm details on the original
+                            listing.
                         </p>
                     </Section>
 
                     <Section title="Text-message (SMS) program">
                         <p>
-                            This is a private, low-volume program for family and household members.
-                            Recipients opt in by texting <strong>JOIN</strong> to
-                            <strong> (206) 339-4171</strong> and receive a one-time confirmation
-                            message. By opting in, you consent to receive recurring text notifications
-                            about casting opportunities (a short alert plus a link to the public casting
-                            page). We send these alerts only to a small number of family and household
-                            members. Message frequency varies, typically up to about two messages per day.
+                            This is a low-volume, non-commercial SMS notification program. Recipients opt in by texting <strong>JOIN</strong> to
+                            <strong> (206) 339-4171</strong> and receive a one-time confirmation message. By opting in, you consent to receive recurring text
+                            notifications about youth performing-arts casting opportunities (a short alert plus a link to the casting listing). Message
+                            frequency varies, typically up to about two messages per day.
                         </p>
                         <p>
-                            <strong>Message and data rates may apply.</strong> Your mobile carrier is
-                            not liable for delayed or undelivered messages.
+                            <strong>Message and data rates may apply.</strong> Your mobile carrier is not liable for delayed or undelivered messages.
                         </p>
                     </Section>
 
                     <Section title="Opting out and help">
                         <p>
-                            You can cancel at any time by replying <strong>STOP</strong> to any
-                            message. After you reply STOP, we will send one confirmation message and
-                            then stop sending texts; reply <strong>JOIN</strong> to resubscribe.
+                            You can cancel at any time by replying <strong>STOP</strong> to any message. After you reply STOP, we will send one confirmation
+                            message and then stop sending texts; reply <strong>JOIN</strong> to resubscribe.
                         </p>
                         <p>
                             For help, reply <strong>HELP</strong> or email{' '}
-                            <a className="text-purple-600 hover:underline" href={`mailto:${CONTACT}`}>{CONTACT}</a>.
+                            <a className="text-purple-600 hover:underline" href={`mailto:${CONTACT}`}>
+                                {CONTACT}
+                            </a>
+                            .
                         </p>
                     </Section>
 
                     <Section title="Privacy">
                         <p>
                             Your mobile information is handled as described in our{' '}
-                            <Link className="text-purple-600 hover:underline" href="/privacy">Privacy Policy</Link>.
-                            We do not share or sell mobile opt-in data or SMS consent to third parties
-                            for marketing purposes.
+                            <Link className="text-purple-600 hover:underline" href="/privacy">
+                                Privacy Policy
+                            </Link>
+                            . We do not share or sell mobile opt-in data or SMS consent to third parties for marketing purposes.
                         </p>
                     </Section>
 
                     <Section title="Changes">
-                        <p>
-                            We may update these terms from time to time; the effective date above will
-                            change accordingly.
-                        </p>
+                        <p>We may update these terms from time to time; the effective date above will change accordingly.</p>
                     </Section>
 
                     <footer className="text-xs text-gray-400 mt-10">
-                        <Link className="text-purple-600 hover:underline" href="/privacy">Privacy Policy</Link>
-                        {' · '}
-                        <Link className="text-purple-600 hover:underline" href="/casting">Casting opportunities</Link>
+                        <Link className="text-purple-600 hover:underline" href="/privacy">
+                            Privacy Policy
+                        </Link>
                     </footer>
                 </div>
             </main>
