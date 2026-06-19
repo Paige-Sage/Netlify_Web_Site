@@ -42,10 +42,12 @@ export default function Privacy() {
                     <Section title="Information we collect">
                         <p>
                             For our text-message (SMS) notifications we store only the mobile phone
-                            numbers of family members who have given us permission to text them. There
-                            is no public sign-up form; numbers are added manually by the account owner
-                            with the recipient&apos;s consent. We do not collect names, location, or
-                            any sensitive personal data through the messaging program.
+                            numbers of family members who have given us permission to text them. This
+                            is a private, invitation-only program: invited family members opt in by
+                            texting the keyword <strong>JOIN</strong> to our program number and receive
+                            a one-time confirmation reply. Numbers that have not been invited are not
+                            enrolled. We do not collect names, location, or any sensitive personal data
+                            through the messaging program.
                         </p>
                         <p>
                             The public casting page itself displays no personal information and does
@@ -62,6 +64,13 @@ export default function Privacy() {
                     </Section>
 
                     <Section title="SMS messaging &amp; consent (text messaging)">
+                        <p>
+                            This is a private, invitation-only messaging program for a small number of
+                            pre-approved family members. Invited recipients consent by texting
+                            <strong> JOIN</strong> to <strong>(206) 339-4171</strong>, after which they
+                            receive a confirmation message. Only pre-approved numbers are eligible to
+                            enroll; we do not message the general public.
+                        </p>
                         <p className="font-medium text-gray-900">
                             No mobile information will be shared with third parties or affiliates for
                             marketing or promotional purposes. Text-messaging originator opt-in data
