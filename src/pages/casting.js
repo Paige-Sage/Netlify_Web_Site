@@ -13,7 +13,8 @@ const API_URL = 'https://stcngwebf9edd8.blob.core.windows.net/castingnotify-web/
 const SECTIONS = [
     { bucket: 'strong', label: 'Strong matches', accent: 'border-green-500', dot: 'bg-green-500' },
     { bucket: 'union_caution', label: 'Union — worth a look (Taft-Hartley)', accent: 'border-purple-500', dot: 'bg-purple-500' },
-    { bucket: 'possible', label: 'Possible', accent: 'border-amber-500', dot: 'bg-amber-500' }
+    { bucket: 'possible', label: 'Possible', accent: 'border-amber-500', dot: 'bg-amber-500' },
+    { bucket: 'age_unclear', label: 'Age unclear', accent: 'border-orange-500', dot: 'bg-orange-500', hideWhenEmpty: true }
 ];
 
 // Map the server-computed tag CSS class to a Tailwind pill. The feed owns tag content (the
@@ -192,7 +193,7 @@ export default function Casting() {
         fetchData();
     }, [fetchData]);
 
-    // Read the server-grouped model defensively: only the 3 known buckets, each a list of cards.
+    // Read the server-grouped model defensively: only allowlisted buckets, each a list of cards.
     const groups =
         feed && feed.groups && typeof feed.groups === 'object' && !Array.isArray(feed.groups)
             ? feed.groups
@@ -271,7 +272,7 @@ export default function Casting() {
                     ) : null}
 
                     {feed && !error
-                        ? SECTIONS.map((s) => (
+                        ? SECTIONS.filter((s) => !s.hideWhenEmpty || byBucket[s.bucket].length > 0).map((s) => (
                               <section key={s.bucket} className="mb-8">
                                   <h2 className={`flex items-center gap-2 text-lg font-semibold text-gray-900 border-b-2 ${s.accent} pb-1 mb-3`}>
                                       <span className={`inline-block w-2.5 h-2.5 rounded-full ${s.dot}`} />
