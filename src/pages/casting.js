@@ -44,6 +44,15 @@ function safeUrl(raw) {
     }
 }
 
+function roleIdentity(label) {
+    if (!label || typeof label !== 'string') return '';
+    return label
+        .split(' — ', 1)[0]
+        .replace(/\s+\((?:est\.\s*)?age\b[^)]*\)\s*$/i, '')
+        .trim()
+        .toLocaleLowerCase();
+}
+
 function timeAgo(iso) {
     const t = Date.parse(iso);
     if (isNaN(t)) return '';
@@ -60,16 +69,14 @@ function timeAgo(iso) {
 function Card({ card }) {
     const tags = Array.isArray(card.tags) ? card.tags.filter((t) => t && t.text) : [];
 
-    // Roles: prefer the LLM's youth-role reading; fall back to the parsed roles (filtering out the
-    // internal "(listing)" placeholder sentinel). Hide the whole box when neither has content.
-    const youthRoles = Array.isArray(card.llm_youth_roles)
-        ? card.llm_youth_roles.filter((r) => r && r.name)
-        : [];
-    const parsedRoles = Array.isArray(card.roles)
-        ? card.roles.filter((r) => r && r !== '(listing)')
-        : [];
-    const useYouth = youthRoles.length > 0;
-    const showRoles = useYouth || parsedRoles.length > 0;
+    // Preserve parsed roles that do not have enriched detail. Semantic enrichment may cover only
+    // part of a project, so it must not hide sibling roles from the structured source.
+    const youthRoles = Array.isArray(card.llm_youth_roles) ? card.llm_youth_roles.filter((r) => r && r.name) : [];
+    const parsedRoles = Array.isArray(card.roles) ? card.roles.filter((r) => r && r !== '(listing)') : [];
+    const enrichedRoleIds = new Set(youthRoles.map((r) => roleIdentity(r.name)).filter(Boolean));
+    const remainingParsedRoles = parsedRoles.filter((role) => !enrichedRoleIds.has(roleIdentity(role)));
+    const showRoles = youthRoles.length > 0 || remainingParsedRoles.length > 0;
+    const locationUrl = safeUrl(card.location_url);
 
     // Links: validate + dedupe each URL client-side; render one anchor per distinct listing.
     const seen = new Set();
@@ -92,14 +99,26 @@ function Card({ card }) {
 
             {tags.length ? (
                 <div className="flex flex-wrap gap-1.5 mt-2">
-                    {tags.map((t, i) => (
-                        <span
-                            key={i}
-                            className={`text-xs px-2 py-0.5 rounded ${TAG_CLASS[t.cls] || TAG_CLASS.tag}`}
-                        >
-                            {t.text}
-                        </span>
-                    ))}
+                    {tags.map((t, i) => {
+                        const className = `text-xs px-2 py-0.5 rounded ${TAG_CLASS[t.cls] || TAG_CLASS.tag}`;
+                        return t.key === 'locality' && locationUrl ? (
+                            <a
+                                key={i}
+                                href={locationUrl.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                referrerPolicy="no-referrer"
+                                title="Open in Google Maps"
+                                className={`${className} hover:underline`}
+                            >
+                                {t.text}
+                            </a>
+                        ) : (
+                            <span key={i} className={className}>
+                                {t.text}
+                            </span>
+                        );
+                    })}
                 </div>
             ) : null}
 
@@ -120,16 +139,15 @@ function Card({ card }) {
                 <div className="mt-2 rounded-md border border-gray-200 bg-gray-50 px-3 py-2">
                     <div className="text-xs font-semibold uppercase tracking-wide text-gray-700">Roles</div>
                     <ul className="list-disc pl-5 text-sm text-gray-700 mt-1">
-                        {useYouth
-                            ? youthRoles.map((r, i) => (
-                                  <li key={i}>
-                                      {r.name}
-                                      {r.quote ? (
-                                          <span className="italic text-gray-500"> — “{r.quote}”</span>
-                                      ) : null}
-                                  </li>
-                              ))
-                            : parsedRoles.map((r, i) => <li key={i}>{r}</li>)}
+                        {youthRoles.map((r, i) => (
+                            <li key={`enriched-${i}`}>
+                                {r.name}
+                                {r.quote ? <span className="italic text-gray-500"> — “{r.quote}”</span> : null}
+                            </li>
+                        ))}
+                        {remainingParsedRoles.map((r, i) => (
+                            <li key={`parsed-${i}`}>{r}</li>
+                        ))}
                     </ul>
                 </div>
             ) : null}
