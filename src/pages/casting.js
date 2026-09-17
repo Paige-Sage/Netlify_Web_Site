@@ -29,6 +29,14 @@ const TAG_CLASS = {
     'tag llm-youth': 'bg-green-100 text-green-700'
 };
 
+const COMPENSATION_BADGE = {
+    paid: { text: 'Paid', className: 'bg-emerald-100 text-emerald-800' },
+    volunteer: { text: 'Volunteer / unpaid', className: 'bg-slate-100 text-slate-700' },
+    in_kind: { text: 'In-kind', className: 'bg-blue-100 text-blue-800' },
+    contingent: { text: 'Contingent', className: 'bg-amber-100 text-amber-800' },
+    mixed: { text: 'Mixed compensation', className: 'bg-orange-100 text-orange-800' }
+};
+
 // ─── Utility helpers ──────────────────────────────────────────────────────────
 // Only allow absolute http/https URLs with no embedded credentials (defense-in-depth; the
 // server already host/scheme-validates, but the SPA re-validates everything it renders).
@@ -68,6 +76,15 @@ function timeAgo(iso) {
 
 function Card({ card }) {
     const tags = Array.isArray(card.tags) ? card.tags.filter((t) => t && t.text) : [];
+    const compensation =
+        card.compensation && typeof card.compensation === 'object' && !Array.isArray(card.compensation)
+            ? card.compensation
+            : null;
+    const compensationBadge = compensation ? COMPENSATION_BADGE[compensation.status] : null;
+    const compensationLines =
+        compensation && Array.isArray(compensation.lines)
+            ? compensation.lines.filter((line) => line && line.text)
+            : [];
 
     // Preserve parsed roles that do not have enriched detail. Semantic enrichment may cover only
     // part of a project, so it must not hide sibling roles from the structured source.
@@ -122,6 +139,14 @@ function Card({ card }) {
                 </div>
             ) : null}
 
+            {compensationBadge ? (
+                <div className="mt-2">
+                    <span className={`inline-block rounded px-2 py-0.5 text-xs font-semibold ${compensationBadge.className}`}>
+                        {compensationBadge.text}
+                    </span>
+                </div>
+            ) : null}
+
             {card.llm_summary ? <div className="text-sm text-gray-600 mt-2">{card.llm_summary}</div> : null}
 
             {card.eligibility_note ? (
@@ -147,6 +172,24 @@ function Card({ card }) {
                         ))}
                         {remainingParsedRoles.map((r, i) => (
                             <li key={`parsed-${i}`}>{r}</li>
+                        ))}
+                    </ul>
+                </div>
+            ) : null}
+
+            {compensationLines.length ? (
+                <div className="mt-2 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2">
+                    <div className="text-xs font-semibold uppercase tracking-wide text-emerald-800">
+                        Compensation
+                    </div>
+                    <ul className="mt-1 list-disc pl-5 text-sm text-emerald-950">
+                        {compensationLines.map((line, i) => (
+                            <li key={`${line.role_name || 'listing'}-${line.kind || 'term'}-${i}`}>
+                                {line.scope === 'role' && line.role_name ? (
+                                    <span className="font-semibold">{line.role_name}: </span>
+                                ) : null}
+                                {line.text}
+                            </li>
                         ))}
                     </ul>
                 </div>
