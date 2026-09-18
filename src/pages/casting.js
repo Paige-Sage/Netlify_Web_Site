@@ -122,6 +122,21 @@ function Card({ card }) {
         compensation && Array.isArray(compensation.lines)
             ? compensation.lines.filter((line) => line && line.text)
             : [];
+    const compensationGroups =
+        compensation && Array.isArray(compensation.groups)
+            ? compensation.groups.filter((group) => group && group.text)
+            : [];
+    const compensationItems = compensationGroups.length
+        ? compensationGroups.map((group) => ({
+            key: `${group.scope || 'listing'}-${group.text}`,
+            names: Array.isArray(group.role_names) ? group.role_names.filter(Boolean) : [],
+            text: group.text
+        }))
+        : compensationLines.map((line, i) => ({
+            key: `${line.role_name || 'listing'}-${line.kind || 'term'}-${i}`,
+            names: line.scope === 'role' && line.role_name ? [line.role_name] : [],
+            text: line.text
+        }));
 
     // Preserve parsed roles that do not have enriched detail. Semantic enrichment may cover only
     // part of a project, so it must not hide sibling roles from the structured source.
@@ -214,18 +229,18 @@ function Card({ card }) {
                 </div>
             ) : null}
 
-            {compensationLines.length ? (
+            {compensationItems.length ? (
                 <div className={`mt-2 rounded-md border px-3 py-2 ${compensationPanelStyle.panelClass}`}>
                     <div className={`text-xs font-semibold uppercase tracking-wide ${compensationPanelStyle.headingClass}`}>
                         Compensation
                     </div>
                     <ul className={`mt-1 list-disc pl-5 text-sm ${compensationPanelStyle.bodyClass}`}>
-                        {compensationLines.map((line, i) => (
-                            <li key={`${line.role_name || 'listing'}-${line.kind || 'term'}-${i}`}>
-                                {line.scope === 'role' && line.role_name ? (
-                                    <span className="font-semibold">{line.role_name}: </span>
+                        {compensationItems.map((item) => (
+                            <li key={item.key}>
+                                {item.names.length ? (
+                                    <span className="font-semibold">{item.names.join(', ')}: </span>
                                 ) : null}
-                                {line.text}
+                                {item.text}
                             </li>
                         ))}
                     </ul>
