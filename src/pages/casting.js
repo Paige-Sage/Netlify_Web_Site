@@ -29,12 +29,48 @@ const TAG_CLASS = {
     'tag llm-youth': 'bg-green-100 text-green-700'
 };
 
-const COMPENSATION_BADGE = {
-    paid: { text: 'Paid', className: 'bg-emerald-100 text-emerald-800' },
-    volunteer: { text: 'Volunteer / unpaid', className: 'bg-slate-100 text-slate-700' },
-    in_kind: { text: 'In-kind', className: 'bg-blue-100 text-blue-800' },
-    contingent: { text: 'Contingent', className: 'bg-amber-100 text-amber-800' },
-    mixed: { text: 'Mixed compensation', className: 'bg-orange-100 text-orange-800' }
+const COMPENSATION_STYLES = {
+    paid: {
+        badgeText: 'Paid',
+        badgeClass: 'bg-emerald-100 text-emerald-800',
+        panelClass: 'border-emerald-200 bg-emerald-50',
+        headingClass: 'text-emerald-800',
+        bodyClass: 'text-emerald-950'
+    },
+    volunteer: {
+        badgeText: 'Volunteer / unpaid',
+        badgeClass: 'bg-slate-100 text-slate-700',
+        panelClass: 'border-slate-200 bg-slate-50',
+        headingClass: 'text-slate-700',
+        bodyClass: 'text-slate-900'
+    },
+    in_kind: {
+        badgeText: 'In-kind',
+        badgeClass: 'bg-blue-100 text-blue-800',
+        panelClass: 'border-blue-200 bg-blue-50',
+        headingClass: 'text-blue-800',
+        bodyClass: 'text-blue-950'
+    },
+    contingent: {
+        badgeText: 'Contingent',
+        badgeClass: 'bg-amber-100 text-amber-800',
+        panelClass: 'border-amber-200 bg-amber-50',
+        headingClass: 'text-amber-900',
+        bodyClass: 'text-amber-950'
+    },
+    mixed: {
+        badgeText: 'Mixed compensation',
+        badgeClass: 'bg-orange-100 text-orange-800',
+        panelClass: 'border-orange-200 bg-orange-50',
+        headingClass: 'text-orange-900',
+        bodyClass: 'text-orange-950'
+    }
+};
+
+const DEFAULT_COMPENSATION_PANEL = {
+    panelClass: 'border-slate-200 bg-slate-50',
+    headingClass: 'text-slate-700',
+    bodyClass: 'text-slate-900'
 };
 
 // ─── Utility helpers ──────────────────────────────────────────────────────────
@@ -80,7 +116,8 @@ function Card({ card }) {
         card.compensation && typeof card.compensation === 'object' && !Array.isArray(card.compensation)
             ? card.compensation
             : null;
-    const compensationBadge = compensation ? COMPENSATION_BADGE[compensation.status] : null;
+    const compensationStyle = compensation ? COMPENSATION_STYLES[compensation.status] : null;
+    const compensationPanelStyle = compensationStyle || DEFAULT_COMPENSATION_PANEL;
     const compensationLines =
         compensation && Array.isArray(compensation.lines)
             ? compensation.lines.filter((line) => line && line.text)
@@ -139,10 +176,10 @@ function Card({ card }) {
                 </div>
             ) : null}
 
-            {compensationBadge ? (
+            {compensationStyle ? (
                 <div className="mt-2">
-                    <span className={`inline-block rounded px-2 py-0.5 text-xs font-semibold ${compensationBadge.className}`}>
-                        {compensationBadge.text}
+                    <span className={`inline-block rounded px-2 py-0.5 text-xs font-semibold ${compensationStyle.badgeClass}`}>
+                        {compensationStyle.badgeText}
                     </span>
                 </div>
             ) : null}
@@ -178,11 +215,11 @@ function Card({ card }) {
             ) : null}
 
             {compensationLines.length ? (
-                <div className="mt-2 rounded-md border border-emerald-200 bg-emerald-50 px-3 py-2">
-                    <div className="text-xs font-semibold uppercase tracking-wide text-emerald-800">
+                <div className={`mt-2 rounded-md border px-3 py-2 ${compensationPanelStyle.panelClass}`}>
+                    <div className={`text-xs font-semibold uppercase tracking-wide ${compensationPanelStyle.headingClass}`}>
                         Compensation
                     </div>
-                    <ul className="mt-1 list-disc pl-5 text-sm text-emerald-950">
+                    <ul className={`mt-1 list-disc pl-5 text-sm ${compensationPanelStyle.bodyClass}`}>
                         {compensationLines.map((line, i) => (
                             <li key={`${line.role_name || 'listing'}-${line.kind || 'term'}-${i}`}>
                                 {line.scope === 'role' && line.role_name ? (
