@@ -101,37 +101,27 @@ Possible situations:
 - One person is trying to hide a surprise while the other needs help.
 - Two students have been given conflicting instructions.
 
-### One possible scene
+Example:
 
-This shows one way the game could unfold, not a script to reproduce.
+> At a costume rack. Sage needs the blue scarf for an entrance in one minute. Paige wants to keep Sage away from the rack.
+>
+> Sage walks toward the rack.
+> SAGE: Have you seen the blue scarf? I go on in one minute.
+>
+> Paige steps in front of the rack and holds out a huge feather boa.
+> PAIGE: Use this. The blue scarf disappeared.
+>
+> Sage's reaching hand stops. She looks at the boa, then at Paige, then at the rack.
+> SAGE: That is not a scarf. Why are you standing there?
+>
+> Paige presses back against the rack.
+> PAIGE: The rack is wobbly.
+>
+> Sage starts around her, still holding the boa. Paige slides with her, staying between Sage and the rack.
 
-**Setting:** At a costume rack. Sage needs the blue scarf for an entrance in
-one minute. Paige wants to keep Sage away from the rack.
+Example after the round:
 
-Sage walks toward the rack.
-
-> **Sage:** Have you seen the blue scarf? I go on in one minute.
-
-Paige steps in front of the rack and holds out a huge feather boa.
-
-> **Paige:** Use this. The blue scarf disappeared.
-
-Sage's reaching hand stops. She looks at the boa, then at Paige, then at the
-rack.
-
-> **Sage:** That is not a scarf. Why are you standing there?
-
-Paige presses back against the rack.
-
-> **Paige:** The rack is wobbly.
-
-Sage starts around her, still holding the boa. Paige slides with her, staying
-between Sage and the rack.
-
-### After the round
-
-> **Paige:** When you stopped reaching and looked from the boa to me, it made
-> me work harder to stay in front of the rack.
+> PAIGE: When you stopped reaching and looked from the boa to me, it made me work harder to stay in front of the rack.
 
 ## Game 2: Change!
 
@@ -324,30 +314,26 @@ The interruption can change:
 - how urgent the problem feels; or
 - what tactic the character tries next.
 
-### One possible scene
+Example:
 
-This shows one way the game could unfold, not a script to reproduce.
-
-**Setting:** Backstage. Sage wants Paige to agree to a careful plan for their
-entrance after they missed a cue.
-
-> **Sage:** If we wait here until the next music starts, we can walk on from
+> Backstage at a show. Sage wants Paige to agree to a careful plan for their entrance after they missed a cue.
+>
+> SAGE: If we wait here until the next music starts, we can walk on from
 > stage left and—
+>
+> \*PAIGE: The music ended thirty seconds ago. They are waiting for us.
+>
+> Sage stops. She looks toward the entrance, then back at Paige.
+> SAGE: Then why are we still here? Come on.
+> Sage starts toward the entrance.
+>
+> Paige follows.
+>
+> SAGE: Stay with me. We go on now.
 
-> **Paige:** The music ended thirty seconds ago. They are waiting for us.
+Example after the round:
 
-Sage stops. She looks toward the entrance, then back at Paige.
-
-> **Sage:** Then why are we still here? Come on.
-
-Sage starts toward the entrance. Paige follows.
-
-> **Sage:** Stay with me. We go on now.
-
-### After the round
-
-> **Paige:** When you stopped explaining and started toward the entrance, it
-> made the missed cue feel urgent.
+> PAIGE: When you stopped explaining and started toward the entrance, it made the missed cue feel urgent.
 
 ## Game 8: Give and Take Focus
 
