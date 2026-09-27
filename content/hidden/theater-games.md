@@ -85,13 +85,14 @@ games include **Camera** and **Contact**.
 - **[Open the official Spolin games page for Camera and Contact](https://spolin.com/?page_id=10)**
 
 1. Choose a simple relationship and problem.
-2. Give each character something they want from the other person.
-3. Begin the scene.
+2. Each actor decides what they want from the other person.
+3. Begin the scene with both actors pursuing those objectives.
 4. One actor introduces an unexpected action or piece of information.
-5. The other actor lets it change something immediately: movement, distance,
-   focus, tactic, use of an object, or tone.
-6. Continue for 20 to 30 seconds.
-7. Switch who introduces the unexpected change.
+5. The receiving actor lets it change the body first, then tries a new tactic
+   with the partner.
+6. Continue for 20 to 30 seconds from the changed problem.
+7. Use one sentence from the **Notice** section, then switch roles in a new
+   situation.
 
 Possible situations:
 
@@ -99,6 +100,38 @@ Possible situations:
 - Two performers both want the only available costume piece.
 - One person is trying to hide a surprise while the other needs help.
 - Two students have been given conflicting instructions.
+
+### One possible scene
+
+This shows one way the game could unfold, not a script to reproduce.
+
+**Setting:** At a costume rack. Sage needs the blue scarf for an entrance in
+one minute. Paige wants to keep Sage away from the rack.
+
+Sage walks toward the rack.
+
+> **Sage:** Have you seen the blue scarf? I go on in one minute.
+
+Paige steps in front of the rack and holds out a huge feather boa.
+
+> **Paige:** Use this. The blue scarf disappeared.
+
+Sage's reaching hand stops. She looks at the boa, then at Paige, then at the
+rack.
+
+> **Sage:** That is not a scarf. Why are you standing there?
+
+Paige presses back against the rack.
+
+> **Paige:** The rack is wobbly.
+
+Sage starts around her, still holding the boa. Paige slides with her, staying
+between Sage and the rack.
+
+### After the round
+
+> **Paige:** When you stopped reaching and looked from the boa to me, it made
+> me work harder to stay in front of the rack.
 
 ## Game 2: Change!
 
@@ -274,13 +307,13 @@ through direct interaction.
 
 - **[Open Viola Spolin's Playing Creates Community](https://spolin.com/?p=603)**
 
-1. One actor begins with a clear plan and objective.
-2. The partner listens and chooses an unexpected interruption.
-3. The first actor lets the interruption affect them before continuing.
-4. The next line must be directed back to the partner rather than delivered
-   privately.
-5. Continue the scene without restarting.
-6. Switch roles so both actors practice disrupting and receiving.
+1. One actor begins saying a clear plan out loud.
+2. The partner interrupts with new information that changes the situation.
+3. The receiving actor lets the news land in the body before speaking again.
+4. The next line goes directly to the partner and uses a new tactic.
+5. Continue for 20 to 30 seconds in the new reality.
+6. Use one sentence from the **Notice** section, then switch roles in a new
+   situation.
 
 The interruption can change:
 
@@ -290,6 +323,31 @@ The interruption can change:
 - what object matters;
 - how urgent the problem feels; or
 - what tactic the character tries next.
+
+### One possible scene
+
+This shows one way the game could unfold, not a script to reproduce.
+
+**Setting:** Backstage. Sage wants Paige to agree to a careful plan for their
+entrance after they missed a cue.
+
+> **Sage:** If we wait here until the next music starts, we can walk on from
+> stage left and—
+
+> **Paige:** The music ended thirty seconds ago. They are waiting for us.
+
+Sage stops. She looks toward the entrance, then back at Paige.
+
+> **Sage:** Then why are we still here? Come on.
+
+Sage starts toward the entrance. Paige follows.
+
+> **Sage:** Stay with me. We go on now.
+
+### After the round
+
+> **Paige:** When you stopped explaining and started toward the entrance, it
+> made the missed cue feel urgent.
 
 ## Game 8: Give and Take Focus
 
