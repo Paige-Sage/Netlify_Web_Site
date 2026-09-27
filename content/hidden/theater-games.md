@@ -1,32 +1,5 @@
 _Created September 26, 2026_
 
-## Sources and attribution
-
-This guide combines established theater games with exercises adapted for a
-shared set of acting goals.
-
-- **Established formats:** Change/New Choice; Yes, And; What Are You Doing?;
-  story-building; space-object work; and give-and-take focus.
-- **Adapted formats:** Fortunately/Unfortunately, the physical extension of
-  Yes, And, and The Unexpected Object.
-- **Created for this practice plan:** Make Me Respond and Interrupted Plan.
-  These apply established improv principles to the goal of responding outwardly
-  when another character disrupts prepared work.
-
-The primary lineage is Viola Spolin's theater-games approach, which uses a
-specific game problem to direct attention away from self-conscious performance
-and toward interaction. The official Spolin resources describe this as
-learning through direct experience with fellow players rather than through
-approval, disapproval, or rote instruction:
-
-- [Viola Spolin - Playing Creates Community](https://spolin.com/?p=603)
-- [Viola Spolin - Games](https://spolin.com/?page_id=10)
-- [Spolin Games Online - Approval/Disapproval Syndrome](https://spolingamesonline.org/the-approval-disapproval-syndrom/)
-- [Northwestern University Press - *Theater Games for the Classroom*](https://nupress.northwestern.edu/9780810163126/theater-games-for-the-classroom/)
-
-Each game below includes one sentence explaining the skill its rule develops.
-Use that sentence to choose a game, then stop thinking about it while playing.
-
 ## Purpose
 
 This is a short, playful practice plan for Sage and Paige to use together. The
@@ -38,12 +11,6 @@ games give either actor a chance to build these skills:
 - try choices before deciding whether they will work;
 - recover easily when a choice is surprising or imperfect; and
 - expand the range between controlled characters and uninhibited characters.
-
-Thoughtful preparation, strong singing, and controlled acting are strengths.
-The goal is not to replace either person's style or change anyone's
-personality. It is to make spontaneity, physical freedom, and comic risk
-additional tools each actor can use when a character or director calls for
-them.
 
 Sage and Paige bring different strengths to the games, and those strengths may
 change from game to game. Both should practice initiating, receiving, leaving
@@ -81,7 +48,7 @@ Choose one or two games from this guide. Switch roles at least once.
 
 Each partner completes one sentence:
 
-> When you did **___**, it made me **___**.
+> When you did **\_\_\_**, it made me **\_\_\_**.
 
 Examples:
 
@@ -111,8 +78,11 @@ practice creating clear offers and responding to them.
 
 **Source:** A custom exercise based on shared practice goals and Spolin's focus
 on actors giving full attention to one another. Related established Spolin
-games include **Camera** and **Contact** on the
-[official Spolin games page](https://spolin.com/?page_id=10).
+games include **Camera** and **Contact**.
+
+**More details and related source material:**
+
+- **[Open the official Spolin games page for Camera and Contact](https://spolin.com/?page_id=10)**
 
 1. Choose a simple relationship and problem.
 2. Give each character something they want from the other person.
@@ -140,10 +110,12 @@ continue. Each partner gets experience releasing a choice without treating it
 as a failure, then accepting the other person's new reality.
 
 **Source:** An established improv game usually called **New Choice** or
-**Change**. See
-[Hoopla Impro - New Choice / Change](https://www.hooplaimpro.com/new-choice.html),
-which describes its purposes as spontaneity, adapting to change, and
-incorporating mistakes.
+**Change**, used to practice spontaneity, adapting to change, and incorporating
+mistakes.
+
+**More details and full instructions:**
+
+- **[Open Hoopla Impro's New Choice / Change instructions](https://www.hooplaimpro.com/new-choice.html)**
 
 1. Begin a simple scene.
 2. At unpredictable moments, the partner says, "Change!"
@@ -177,8 +149,11 @@ accepting a changed situation and building forward instead of trying to restore
 the story they expected.
 
 **Source:** A common alternating-story variation of the established
-**Building a Story** format. See **Building a Story** on the
-[official Spolin games page](https://spolin.com/?page_id=10).
+**Building a Story** format.
+
+**More details and related source material:**
+
+- **[Open the official Spolin games page for Building a Story](https://spolin.com/?page_id=10)**
 
 Build a story one sentence at a time:
 
@@ -206,11 +181,14 @@ visible instead of allowing the scene to remain only a clever verbal exchange.
 Both actors practice making offers that matter and allowing those offers to
 change them.
 
-**Source:** **Yes, And** is a foundational improv principle taught by
-[The Second City](https://www.secondcity.com/classes/virtual/improv/improv-1-online-vir)
-to develop agreement, listening, presence, spontaneity, risk-taking, and the
-making and acceptance of offers. Requiring each new fact to have a physical
-effect is an adaptation for these shared practice goals.
+**Source:** **Yes, And** is a foundational improv principle taught to develop
+agreement, listening, presence, spontaneity, risk-taking, and the making and
+acceptance of offers. Requiring each new fact to have a physical effect is an
+adaptation for these shared practice goals.
+
+**More details and related source material:**
+
+- **[Open The Second City's Improv 1 course description](https://www.secondcity.com/classes/virtual/improv/improv-1-online-vir)**
 
 1. Establish a place and relationship.
 2. One actor introduces a new fact.
@@ -233,8 +211,11 @@ Each actor begins the named activity before designing exactly how it should
 look, practicing physical commitment ahead of analysis while also giving a
 partner a clear, playable suggestion.
 
-**Source:** An established youth drama game. See
-[Drama Notebook - What Are You Doing?](https://www.dramanotebook.com/drama-games/what-are-you-doing/).
+**Source:** An established youth drama game.
+
+**More details and full instructions:**
+
+- **[Open Drama Notebook's What Are You Doing? instructions](https://www.dramanotebook.com/drama-games/what-are-you-doing/)**
 
 1. One actor starts performing a clear physical activity.
 2. The partner asks, "What are you doing?"
@@ -253,9 +234,12 @@ Specific weight, size, texture, and use give the receiving actor's body a
 concrete task. The partner's added complication keeps both actors focused on
 the shared object rather than on whether either person looks expressive.
 
-**Source:** An adaptation of established Spolin space-object work. See
-[Spolin Games Online - Object Moves the Players](https://spolingamesonline.org/object-moves-the-players/)
-and [Drama Notebook - Space Objects](https://www.dramanotebook.com/drama-games/space-objects/).
+**Source:** An adaptation of established Spolin space-object work.
+
+**More details and related source material:**
+
+- **[Open Spolin Games Online's Object Moves the Players](https://spolingamesonline.org/object-moves-the-players/)**
+- **[Open Drama Notebook's Space Objects instructions](https://www.dramanotebook.com/drama-games/space-objects/)**
 
 1. One actor hands the other an imaginary object without naming it.
 2. The receiving actor decides what it is through weight, size, texture, and
@@ -284,8 +268,11 @@ the sequence by switching roles.
 
 **Source:** A custom exercise combining a clear objective, an unpredictable
 partner offer, and the Spolin principle that actors solve a specific problem
-through direct interaction. The underlying approach is described in
-[Viola Spolin - Playing Creates Community](https://spolin.com/?p=603).
+through direct interaction.
+
+**More details and related source material:**
+
+- **[Open Viola Spolin's Playing Creates Community](https://spolin.com/?p=603)**
 
 1. One actor begins with a clear plan and objective.
 2. The partner listens and chooses an unexpected interruption.
@@ -312,10 +299,12 @@ Passing focus asks each actor to make an impulse visible and then become
 available for the partner's next impulse. Both practice outward connection,
 clear initiation, and leaving space without requiring constant movement.
 
-**Source:** **Give-and-take** is an established Spolin principle. Her official
-games page describes it as foundational to the work. A classroom version is
-available at
-[Drama Notebook - Give and Take](https://www.dramanotebook.com/drama-games/give-and-take/).
+**Source:** **Give-and-take** is an established Spolin principle described as
+foundational to the work. This version draws on a classroom adaptation.
+
+**More details and full instructions for the classroom version:**
+
+- **[Open Drama Notebook's Give and Take instructions](https://www.dramanotebook.com/drama-games/give-and-take/)**
 
 1. Begin a silent activity together.
 2. One actor takes focus through a clear action.
@@ -393,3 +382,30 @@ In a future audition:
 - Record rarely and only when both actors want to review a specific skill.
 - Let regular rehearsals and directors provide the primary performance
   coaching.
+
+## Sources and attribution
+
+This guide combines established theater games with exercises adapted for a
+shared set of acting goals.
+
+- **Established formats:** Change/New Choice; Yes, And; What Are You Doing?;
+  story-building; space-object work; and give-and-take focus.
+- **Adapted formats:** Fortunately/Unfortunately, the physical extension of
+  Yes, And, and The Unexpected Object.
+- **Created for this practice plan:** Make Me Respond and Interrupted Plan.
+  These apply established improv principles to the goal of responding outwardly
+  when another character disrupts prepared work.
+
+The primary lineage is Viola Spolin's theater-games approach, which uses a
+specific game problem to direct attention away from self-conscious performance
+and toward interaction. The official Spolin resources describe this as
+learning through direct experience with fellow players rather than through
+approval, disapproval, or rote instruction:
+
+- [Viola Spolin - Playing Creates Community](https://spolin.com/?p=603)
+- [Viola Spolin - Games](https://spolin.com/?page_id=10)
+- [Spolin Games Online - Approval/Disapproval Syndrome](https://spolingamesonline.org/the-approval-disapproval-syndrom/)
+- [Northwestern University Press - _Theater Games for the Classroom_](https://nupress.northwestern.edu/9780810163126/theater-games-for-the-classroom/)
+
+Each game includes one sentence explaining the skill its rule develops.
+Use that sentence to choose a game, then stop thinking about it while playing.
