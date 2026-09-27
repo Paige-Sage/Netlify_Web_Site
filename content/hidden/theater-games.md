@@ -321,7 +321,7 @@ Example:
 > SAGE: If we wait here until the next music starts, we can walk on from
 > stage left and—
 >
-> \*PAIGE: The music ended thirty seconds ago. They are waiting for us.
+> PAIGE: The music ended thirty seconds ago. They are waiting for us.
 >
 > Sage stops. She looks toward the entrance, then back at Paige.  
 > SAGE: Then why are we still here? Come on.  
