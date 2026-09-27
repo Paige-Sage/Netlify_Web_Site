@@ -105,16 +105,16 @@ Example:
 
 > At a costume rack. Sage needs the blue scarf for an entrance in one minute. Paige wants to keep Sage away from the rack.
 >
-> Sage walks toward the rack.
+> Sage walks toward the rack.  
 > SAGE: Have you seen the blue scarf? I go on in one minute.
 >
-> Paige steps in front of the rack and holds out a huge feather boa.
+> Paige steps in front of the rack and holds out a huge feather boa.  
 > PAIGE: Use this. The blue scarf disappeared.
 >
-> Sage's reaching hand stops. She looks at the boa, then at Paige, then at the rack.
+> Sage's reaching hand stops. She looks at the boa, then at Paige, then at the rack.  
 > SAGE: That is not a scarf. Why are you standing there?
 >
-> Paige presses back against the rack.
+> Paige presses back against the rack.  
 > PAIGE: The rack is wobbly.
 >
 > Sage starts around her, still holding the boa. Paige slides with her, staying between Sage and the rack.
@@ -323,8 +323,8 @@ Example:
 >
 > \*PAIGE: The music ended thirty seconds ago. They are waiting for us.
 >
-> Sage stops. She looks toward the entrance, then back at Paige.
-> SAGE: Then why are we still here? Come on.
+> Sage stops. She looks toward the entrance, then back at Paige.  
+> SAGE: Then why are we still here? Come on.  
 > Sage starts toward the entrance.
 >
 > Paige follows.
